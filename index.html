@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Metadados da página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techlnfo Solutions</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: #0596A6;
+            margin: 0; /*remover margem da página*/
+            padding: 0; /*remover preenchimento da página*/
+        }
+
+        header {
+            font-family: "Copperplate", "Copperplate Gothic Light", sans-serif;
+            color: #0D0D0D;
+            padding: 20px;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            margin: 0;
+        }
+
+        img {
+            position: absolute; /*para a imagem não se mover com o zoom*/
+            top: 0; /*ficar no topo da tela*/
+            left: 0; /*imagem ficar na esquerda*/
+        }
+
+        fieldset {
+            border: 4px solid black; 
+            margin: 20px;
+            padding: 10px;
+        }
+
+        form {
+            text-align: center;
+            color: white;
+            background-color: #F2911B;
+            padding: 20px;
+            margin: 20px auto; /*deixa o formulário centralizado com a página*/
+            width: fit-content; /*deixa só uma parte do formulário com cor*/
+            border-radius: 8px; /*borda arredondada*/
+            font-family: "Copperplate", "Copperplate Gothic Bold", sans-serif;
+        }
+    </style>
+    <!--Cabeçalho-->
+    <header>
+        <h1> Techlnfo Solutions </h1>
+        <h2> Preencha o Formulário: </h2>
+        <img src="bana.png" width="300" height="300">
+    </header>
+
+    <!--Estrutura Básica do Formulário-->
+    <form action="processar.php" method="post">
+        <fieldset style="width: 500px; background-color: #0a727d;"> <!--Borda no formulário-->
+            <legend>Dados Pessoais</legend> <!--Título da borda-->
+
+            <!--Campos de Entrada-->
+            <label for="nome">Nome Completo:</label>
+            <br>
+            <input type="text" id="nome" name="nome" required minlength="6" placeholder="Digite seu Nome">
+            <br><br> <!--Espaço Dublo-->
+            <label for="e-mail">E-mail:</label>
+            <br>
+            <input type="email" id="e-mail" name="e-mail" placeholder="Digite seu E-mail">
+            <br> <br>
+            <label for="data">*Data de Nascimento:</label>
+            <br>
+            <input type="date" id="data" name="data" required>
+            <br><br>
+            <label for="senha">*Senha:</label>
+            <br>
+            <input type="password" id="senha" name="senha" required maxlength="10" minlength="4">
+            <br><br>
+            <label for="celular">Telefone:</label>
+            <br>
+            <input type="tel" id="celular" name="celular" minlength="9" maxlength="11" placeholder="(00)00000-0000">
+            <br><br>
+            
+            <!--Escolha de Páis-->
+            <label for="country">Selecione o seu País:</label>
+            <br>
+            <select id="country" nome="country">
+                <option value="" disabled selected>Selecione seu País</option>
+                <option value="br">Brasil</option>
+                <option value="usa">Estado Unidos</option>
+                <option value="ing">Inglaterra</option>
+                <option value="ca">Canadá</option>
+                <option value="ale">Alemanha</option>
+                <option value="fr">França</option>
+                <option value="es">Espanha</option>
+                <option value="it">Itália</option>
+                <option value="jp">Japão</option>
+                <option value="cn">China</option>
+            </select>
+            <br><br>
+
+            <!--Sexo-->
+            <label> Informe o seu gênero:</label>
+            <br>
+            <input type="radio" id="homem" name="genero" value="HOMEM">
+            <label for="homem">Homem</label>
+            <br>
+            <input type="radio" id="mulher" name="genero" value="MULHER">
+            <label for="mulher">Mulher</label>
+            <br>
+            <input type="radio" id="outro" name="genero" value="OUTRO">
+            <label for="outro">Outro</label>
+            <br><br>
+
+            <!--TextArea-->
+            Deixe o seu comentário:
+            <br>
+            <textarea name="comentario"></textarea>
+            <br><br>
+
+            <!--Termos e Condições-->
+            <input type="checkbox" id="termos" name="termos" required>
+            <label for="termos">*Aceita os Termos e Condições</label>
+            <br><br>
+
+            <!--Botões-->
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Restaurar">
+
+        </fieldset>
+    </form>
+</body>
+
+</html>
